@@ -14,15 +14,15 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-    <!-- 配置springmvc的前端控制器 -->
+    <!-- springmvc配置，前台 -->
     <servlet>
-        <servlet-name>springMVC</servlet-name>
+        <servlet-name>springMVC-front</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <!--contextConfigLocation用来配置springMVC加载的配置文件（用来配置HandlerMapping, HandlerAdapter, etc)-->
         <!--若不配置contextConfigLocation, 默认加载 /WEB-INF/servlet名称-servlet.xml文件（这里即为springMVC-servlet.xml）-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:spring/springMVC.xml</param-value>
+            <param-value>classpath:spring/springMVC-front.xml</param-value>
         </init-param>
         <!--值大于等于0表示启动服务器时加载，值越小优先级越高-->
         <load-on-startup>1</load-on-startup>
@@ -35,8 +35,23 @@
     <!--使用此种方法可以实现RESTful风格的url-->
     <!--第三种：/* ，这种配置不对，使用这种配置，最终要转发到一个jsp页面时，仍然会由由DispatcherServlet解析jsp地址，不能根据jsp页面找到handler，会报错。-->
     <servlet-mapping>
-        <servlet-name>springMVC</servlet-name>
-        <url-pattern>/</url-pattern>
+        <servlet-name>springMVC-front</servlet-name>
+        <url-pattern>*.shtml</url-pattern>
+    </servlet-mapping>
+
+    <!-- springmvc配置，后台 -->
+    <servlet>
+        <servlet-name>springMVC-back</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring/springMVC-front.xml</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>springMVC-back</servlet-name>
+        <url-pattern>*.do</url-pattern>
     </servlet-mapping>
 
     <!--解决post乱码-->

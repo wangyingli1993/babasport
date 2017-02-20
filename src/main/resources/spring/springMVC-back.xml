@@ -10,7 +10,7 @@
       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--扫描controller-->
-    <context:component-scan base-package="me.alent.controller"/>
+    <context:component-scan base-package="me.alent.core.controller"/>
 
     <!--配置处理器映射器与适配器-->
     <mvc:annotation-driven/>
