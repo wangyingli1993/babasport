@@ -11,6 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-    <h2>hello world !</h2>
+<form action="/test/springmvc.do" method="POST">
+    <input type="text" value="2017-02-21 20:13:20" name="birthday">
+    <input type="submit" value="submit">
+
+</form>
 </body>
 </html>
