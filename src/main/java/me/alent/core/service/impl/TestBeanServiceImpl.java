@@ -18,6 +18,7 @@ public class TestBeanServiceImpl implements TestBeanService {
 
     public void addTestBean(TestBean testBean) throws Exception {
         testBeanMapper.addTestBean(testBean);
+        throw new RuntimeException();
     }
 
     public TestBean findTestBeanById(int id) throws Exception {
