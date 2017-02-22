@@ -314,7 +314,7 @@
       <!--<artifactId>jcaptcha-my</artifactId>-->
       <!--<version>1.0</version>-->
     <!--</dependency>-->
-    <!--&lt;!&ndash;page &ndash;&gt;-->
+    <!--page -->
     <!--<dependency>-->
       <!--<groupId>cn.itcast</groupId>-->
       <!--<artifactId>page</artifactId>-->

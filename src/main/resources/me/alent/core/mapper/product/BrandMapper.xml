@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.alent.core.mapper.product.BrandMapper">
+
+    <resultMap id="brand" type="Brand">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="description" property="description"/>
+        <result column="img_url" property="imgUrl"/>
+        <result column="sort" property="sort"/>
+        <result column="is_display" property="isDisplay"/>
+    </resultMap>
+
+    <sql id="get_brand_where">
+        <if test="isDisplay != null">
+            is_display = #{isDisplay}
+        </if>
+        <if test="name != null and name != ''">
+            and name LIKE CONCAT('%', #{name}, '%')
+        </if>
+    </sql>
+
+    <!--查询品牌-->
+    <select id="getBrandListWithPage" parameterType="BrandPagination" resultMap="brand">
+		SELECT id, name, description, img_url, sort, is_display
+        FROM bbs_brand
+        <where>
+            <include refid="get_brand_where"/>
+        </where>
+        ORDER BY id DESC
+        LIMIT #{startRow}, #{pageSize}
+    </select>
+    <!--sql中不要使用count(*), 太浪费性能，使用count(1)-->
+    <select id="getBrandCount" parameterType="Brand" resultType="int">
+        SELECT count(1)
+        FROM bbs_brand
+        <where>
+            <include refid="get_brand_where"/>
+        </where>
+    </select>
+</mapper>

@@ -15,7 +15,7 @@ function checkBox(name,checked){
 function optDelete(name,isDisplay){
 	//请选择一个
 	var s = $("input[name='ids']:checked").size();
- 	if(s <= 0){
+ 	if(s<=0){
 		alert("请至少选择一个!");
 		return;
 	}
@@ -39,7 +39,7 @@ function optDelete(name,isDisplay){
 </div>
 <div class="body-box">
 <form action="/brand/list.do" method="post" style="padding-top:5px;">
-品牌名称: <input type="text" name="name" value="${name }"/>
+品牌名称: <input type="text" name="name" value="${name}"/>
 	<select name="isDisplay">
 		<option value="1" <c:if test="${isDisplay == 1 }">selected="selected"</c:if> >是</option>
 		<option value="0" <c:if test="${isDisplay == 0 }">selected="selected"</c:if>>不是</option>
@@ -62,12 +62,11 @@ function optDelete(name,isDisplay){
 	</thead>
 	<tbody class="pn-ltbody">
 		<c:forEach items="${pagination.list }" var="entry">
-		
 			<tr bgcolor="#ffffff" onmouseout="this.bgColor='#ffffff'" onmouseover="this.bgColor='#eeeeee'">
 				<td><input type="checkbox" value="${entry.id }" name="ids"/></td>
 				<td align="center">${entry.id }</td>
 				<td align="center">${entry.name }</td>
-				<td align="center"><img width="40" height="40" src="${entry.allUrl}"/></td>
+				<td align="center"><img width="40" height="40" src="${entry.imgUrl}"/></td>
 				<td align="center">${entry.description }</td>
 				<td align="center">${entry.sort }</td>
 				<td align="center"><c:if test="${entry.isDisplay == 1 }">是</c:if><c:if test="${entry.isDisplay == 0 }">不是</c:if></td>
@@ -76,14 +75,13 @@ function optDelete(name,isDisplay){
 				</td>
 			</tr>
 		</c:forEach>
-	
 	</tbody>
 </table>
 </form>
 <div class="page pb15">
 	<span class="r inb_a page_b">
 		<c:forEach items="${pagination.pageView }" var="page">
-			${page }
+			${page}
 		</c:forEach>
 	</span>
 </div>
