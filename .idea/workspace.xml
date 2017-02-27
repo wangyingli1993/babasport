@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a1db84a-ea43-4598-963f-d637af1d0c12" name="Default" comment="使用Jersey上传图片到另一个服务器">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/alent/common/web/ResponseUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/alent/core/controller/admin/UploadController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/babasport_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/babasport_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/babasport.iml" afterPath="$PROJECT_DIR$/babasport.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/alent/core/controller/admin/BrandController.java" afterPath="$PROJECT_DIR$/src/main/java/me/alent/core/controller/admin/BrandController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/applicationContext-service.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/applicationContext-service.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/springMVC-back.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/springMVC-back.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/brand/add.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/brand/add.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/alent/core/controller/admin/UploadController.java" afterPath="$PROJECT_DIR$/src/main/java/me/alent/core/controller/admin/UploadController.java" />
     </list>
     <ignored path="babasport.iws" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -82,7 +75,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/brand/add.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
@@ -92,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UploadController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UploadController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/alent/core/controller/admin/UploadController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="52" column="28" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="28" />
+            <state relative-caret-position="130">
+              <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,8 +173,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/spring/springMVC-back.xml" />
         <option value="D:/java/maven/repo/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar!/org/apache/commons/io/FilenameUtils.class" />
         <option value="$PROJECT_DIR$/src/main/java/me/alent/common/web/ResponseUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/alent/core/controller/admin/UploadController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/brand/add.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/me/alent/core/controller/admin/UploadController.java" />
       </list>
     </option>
   </component>
@@ -877,7 +870,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -1494,7 +1487,7 @@
       <workItem from="1488010210520" duration="654000" />
       <workItem from="1488010921539" duration="2760000" />
       <workItem from="1488013929087" duration="502000" />
-      <workItem from="1488194397190" duration="12293000" />
+      <workItem from="1488194397190" duration="12466000" />
     </task>
     <task id="LOCAL-00001" summary="the first commit">
       <created>1486985197213</created>
@@ -1524,7 +1517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487682466548</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="使用Jersey上传图片到另一个服务器">
+      <created>1488209507886</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1488209507886</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1560,7 +1560,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82746000" />
+    <option name="totallyTimeSpent" value="82919000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1573,7 +1573,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1364" height="726" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61449754" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5444079" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1587,7 +1587,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3381902" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3381902" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22768533" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1637,6 +1637,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <MESSAGE value="the first commit" />
     <MESSAGE value="前后台页面及所需jar包" />
     <MESSAGE value="前后台页面及所需jar包，SMM环境搭建" />
@@ -1938,16 +1939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/alent/core/controller/admin/UploadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="52" column="28" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/alent/core/service/product/BrandServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -1961,6 +1952,16 @@
         <state relative-caret-position="84">
           <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/alent/core/controller/admin/UploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

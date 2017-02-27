@@ -52,5 +52,6 @@ public class UploadController {
         jsonObject.put("url", url);
         jsonObject.put("path", path);
         ResponseUtils.renderJson(response, jsonObject.toString());
+
     }
 }
