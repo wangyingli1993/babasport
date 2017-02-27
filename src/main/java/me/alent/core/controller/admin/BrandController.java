@@ -43,4 +43,10 @@ public class BrandController {
         model.addAttribute("isDisplay", brandPagination.getIsDisplay());
         return"brand/list";
     }
+
+    @RequestMapping(value = "brand/toAdd.do")
+    public String toAdd() {
+        return "brand/add";
+    }
+
 }

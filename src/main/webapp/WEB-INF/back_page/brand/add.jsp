@@ -5,26 +5,20 @@
 <head>
 <title>babasport-add</title>
 <script type="text/javascript">
-//上传图片
+//使用ajax异步上传图片，并返回路径
 function uploadPic(){
-	//定义参数
 	var options = {
-		url : "/upload/uploadPic.do",
-		dataType : "json",
-		type :  "post",
-		success : function(data){
-			//回调 二个路径  
-			//url
-			//path
-			$("#allImgUrl").attr("src",data.url);
-			$("#path").val(data.path);
+		url:"/upload/uploadPic.do",
+		dataType: "json",
+		type: "post",
+		success: function (data) {
+			//返回两个路径
+			$('#allImgUrl').attr('src', data.url);
+			$('#path').val(data.path);
 		}
 	};
-	
-	
 	//jquery.form使用方式
 	$("#jvForm").ajaxSubmit(options);
-	
 }
 
 </script>
