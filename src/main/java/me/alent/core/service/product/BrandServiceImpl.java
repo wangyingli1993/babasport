@@ -3,6 +3,7 @@ package me.alent.core.service.product;
 
 import me.alent.common.page.Pagination;
 import me.alent.core.mapper.product.BrandMapper;
+import me.alent.core.po.product.Brand;
 import me.alent.core.po.product.BrandPagination;
 import org.springframework.stereotype.Service;
 
@@ -22,5 +23,9 @@ public class BrandServiceImpl implements BrandService {
         Pagination pagination = new Pagination(brandPagination.getPageNo(), brandPagination.getPageSize(), count);
         pagination.setList(brandMapper.getBrandListWithPage(brandPagination));
         return pagination;
+    }
+
+    public void addBrand(Brand brand) throws Exception {
+        brandMapper.addBrand(brand);
     }
 }

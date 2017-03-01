@@ -1,6 +1,7 @@
 package me.alent.core.controller.admin;
 
 import me.alent.common.page.Pagination;
+import me.alent.core.po.product.Brand;
 import me.alent.core.po.product.BrandPagination;
 import me.alent.core.service.product.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +42,7 @@ public class BrandController {
         model.addAttribute("pagination", pagination);
         model.addAttribute("name", brandPagination.getName());
         model.addAttribute("isDisplay", brandPagination.getIsDisplay());
-        return"brand/list";
+        return "brand/list";
     }
 
     @RequestMapping(value = "brand/toAdd.do")
@@ -49,4 +50,10 @@ public class BrandController {
         return "brand/add";
     }
 
+    @RequestMapping(value = "/brand/add.do")
+    public String add(Brand brand) throws Exception {
+        brandService.addBrand(brand);
+        return "redirect:/brand/list.do";
+    }
 }
+

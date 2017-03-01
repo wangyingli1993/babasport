@@ -9,4 +9,5 @@ import me.alent.core.po.product.BrandPagination;
  */
 public interface BrandService {
     Pagination getBrandListWithPage(BrandPagination brandPagination) throws Exception;
+    void addBrand(Brand brand) throws Exception;
 }

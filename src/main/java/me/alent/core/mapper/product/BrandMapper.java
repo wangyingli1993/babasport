@@ -14,4 +14,6 @@ public interface BrandMapper {
 
     //查询总记录数
     int getBrandCount(BrandPagination brandPagination) throws Exception;
+
+    void addBrand(Brand brand) throws Exception;
 }
