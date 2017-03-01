@@ -2,6 +2,7 @@ package me.alent.core.controller.admin;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
+import me.alent.common.web.Constants;
 import me.alent.common.web.ResponseUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.json.JSONObject;
@@ -43,7 +44,7 @@ public class UploadController {
         // 保存到数据库
         String path = "upload/" + format + "." + extension;
         // 另一台服务器的请求路径
-        String url = "http://localhost:8888/image-web/" + path;
+        String url = Constants.IMAGE_URL + path;
         WebResource resource = client.resource(url);
         resource.put(String.class, pic.getBytes());
 
