@@ -28,4 +28,21 @@ public class BrandServiceImpl implements BrandService {
     public void addBrand(Brand brand) throws Exception {
         brandMapper.addBrand(brand);
     }
+
+    public void deleteBrandByKey(Integer id) throws Exception {
+        brandMapper.deleteBrandByKey(id);
+    }
+
+    public void deleteBrandByKeys(Integer[] ids) throws Exception {
+        brandMapper.deleteBrandByKeys(ids);
+    }
+
+    public void updateBrandByKey(Brand brand, Integer id) throws Exception {
+        brand.setId(id);
+        brandMapper.updateBrandByKey(brand);
+    }
+
+    public Brand getBrandByKey(Integer id) throws Exception {
+        return brandMapper.getBrandByKey(id);
+    }
 }

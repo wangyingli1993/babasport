@@ -1,5 +1,7 @@
 package me.alent.core.po.product;
 
+import me.alent.common.web.Constants;
+
 /**
  * 品牌
  * Created by Alent on 2017/2/21.
@@ -11,6 +13,10 @@ public class Brand {
     private String imgUrl;
     private Integer sort;
     private Integer isDisplay;
+
+    public String getAllImgUrl() {
+        return Constants.IMAGE_URL + this.getImgUrl();
+    }
 
     public Integer getId() {
         return id;

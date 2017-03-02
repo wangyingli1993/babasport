@@ -21,6 +21,30 @@
         </if>
     </sql>
 
+    <update id="updateBrandByKey" parameterType="Brand">
+        UPDATE bbs_brand
+        <set>
+            <if test="name != null">
+                name=#{name},
+            </if>
+            <if test="description != null">
+                description=#{description},
+            </if>
+            <if test="imgUrl != null">
+                img_url=#{imgUrl},
+            </if>
+            <if test="sort != null">
+                sort=#{sort},
+            </if>
+            <if test="isDisplay != null">
+                is_display=#{isDisplay}
+            </if>
+        </set>
+        <where>
+            id=#{id}
+        </where>
+    </update>
+
     <!--查询品牌-->
     <select id="getBrandListWithPage" parameterType="BrandPagination" resultMap="brand">
 		SELECT id, name, description, img_url, sort, is_display
@@ -37,6 +61,14 @@
         FROM bbs_brand
         <where>
             <include refid="get_brand_where"/>
+        </where>
+    </select>
+
+    <select id="getBrandByKey" resultMap="brand">
+        SELECT id, name, description, img_url, sort, is_display
+        FROM bbs_brand
+        <where>
+            id = #{id}
         </where>
     </select>
 
@@ -59,4 +91,24 @@
             #{isDisplay}
         </trim>
     </insert>
+
+    <!--删除-->
+    <delete id="deleteBrandByKey" parameterType="int">
+        DELETE FROM bbs_brand
+        <where>
+            id = #{id}
+        </where>
+
+    </delete>
+
+    <!--批量删除-->
+    <delete id="deleteBrandByKeys" parameterType="int">
+        DELETE FROM bbs_brand
+        <where>
+            id in
+            <foreach collection="array" item="id" open="(" close=")" separator=",">
+                #{id}
+            </foreach>
+        </where>
+    </delete>
 </mapper>
