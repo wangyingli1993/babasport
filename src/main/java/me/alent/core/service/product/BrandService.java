@@ -1,23 +1,34 @@
 package me.alent.core.service.product;
 
+
 import me.alent.common.page.Pagination;
+import me.alent.core.Query.product.BrandQuery;
 import me.alent.core.po.product.Brand;
-import me.alent.core.po.product.BrandPagination;
+
+import java.util.List;
 
 /**
- * Created by Alent on 2017/2/21.
+ * 品牌
+ * @author lx
+ *
  */
 public interface BrandService {
-    Pagination getBrandListWithPage(BrandPagination brandPagination) throws Exception;
 
-    void addBrand(Brand brand) throws Exception;
-
-    void deleteBrandByKey(Integer id) throws Exception;
-
-    //批量删除
-    void deleteBrandByKeys(Integer[] ids) throws Exception;
-
-    void updateBrandByKey(Brand brand, Integer id) throws Exception;
-
-    Brand getBrandByKey(Integer id) throws Exception;
+	public Pagination getBrandListWithPage(Brand brand);
+	
+	//查询集合
+	public List<Brand> getBrandList(BrandQuery brandQuery);
+	
+	//添加品牌
+	public void addBrand(Brand brand);
+	
+	//删除
+	public void deleteBrandByKey(Integer id);
+	//删除 批量
+	public void deleteBrandByKeys(Integer[] ids);//List<Integer>  ids
+	//修改
+	public void updateBrandByKey(Brand brand);
+	
+	//
+	public Brand getBrandByKey(Integer id);
 }

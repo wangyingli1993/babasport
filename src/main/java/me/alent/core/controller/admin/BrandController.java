@@ -2,7 +2,6 @@ package me.alent.core.controller.admin;
 
 import me.alent.common.page.Pagination;
 import me.alent.core.po.product.Brand;
-import me.alent.core.po.product.BrandPagination;
 import me.alent.core.service.product.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,27 +21,27 @@ public class BrandController {
 
     // 品牌列表页面
     @RequestMapping(value = "/brand/list.do")
-    public String list(BrandPagination brandPagination, Model model) throws Exception {
+    public String list(Brand brand, Model model) throws Exception {
         //首次查询，确保pageNo不为空
-        brandPagination.setPageNo(Pagination.cpn(brandPagination.getPageNo()));
+        brand.setPageNo(Pagination.cpn(brand.getPageNo()));
         // 设置分页查询的开始行
-        int startRow = (brandPagination.getPageNo() - 1) * brandPagination.getPageSize();
-        brandPagination.setStartRow(startRow);
+        int startRow = (brand.getPageNo() - 1) * brand.getPageSize();
+        brand.setStartRow(startRow);
 
-        Pagination pagination = brandService.getBrandListWithPage(brandPagination);
+        Pagination pagination = brandService.getBrandListWithPage(brand);
         String url = "/brand/list.do";
         StringBuilder sb = new StringBuilder();
-        if (!StringUtils.isEmpty(brandPagination.getName())) {
-            sb.append("name=").append(brandPagination.getName());
+        if (!StringUtils.isEmpty(brand.getName())) {
+            sb.append("name=").append(brand.getName());
         }
-        if (!StringUtils.isEmpty(brandPagination.getIsDisplay())) {
-            sb.append("&").append("isDisplay=").append(brandPagination.getIsDisplay());
+        if (!StringUtils.isEmpty(brand.getIsDisplay())) {
+            sb.append("&").append("isDisplay=").append(brand.getIsDisplay());
         }
         pagination.pageView(url, sb.toString());
 
         model.addAttribute("pagination", pagination);
-        model.addAttribute("name", brandPagination.getName());
-        model.addAttribute("isDisplay", brandPagination.getIsDisplay());
+        model.addAttribute("name", brand.getName());
+        model.addAttribute("isDisplay", brand.getIsDisplay());
         return "brand/list";
     }
 
@@ -92,7 +91,7 @@ public class BrandController {
     //提交修改页面
     @RequestMapping(value = "/brand/edit.do")
     public String edit(Integer id, Brand brand) throws Exception {
-        brandService.updateBrandByKey(brand, id);
+        brandService.updateBrandByKey(brand);
         return "redirect:/brand/list.do";
     }
 }

@@ -2,47 +2,70 @@ package me.alent.core.service.product;
 
 
 import me.alent.common.page.Pagination;
+import me.alent.core.Query.product.BrandQuery;
 import me.alent.core.mapper.product.BrandMapper;
 import me.alent.core.po.product.Brand;
-import me.alent.core.po.product.BrandPagination;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
- * Created by Alent on 2017/2/21.
+ * 品牌事务
+ * @author lx
+ *
  */
 @Service
-public class BrandServiceImpl implements BrandService {
+@Transactional
+public class BrandServiceImpl implements BrandService{
+	
+	@Resource
+	private BrandMapper brandMapper;
 
-    @Resource
-    private BrandMapper brandMapper;
+	@Transactional(readOnly = true)
+	public Pagination getBrandListWithPage(Brand brand){
+		//1:起始页  startRow = (pageNo - 1)*pageSize
+		//2:每页数
+		//3:总记录数
+		Pagination  pagination = new Pagination(brand.getPageNo(),brand.getPageSize(), brandMapper.getBrandCount(brand));
+		//Brand集合
+		pagination.setList(brandMapper.getBrandListWithPage(brand));
+		
+		return pagination;
+	}
 
-    public Pagination getBrandListWithPage(BrandPagination brandPagination) throws Exception {
-        int count = brandMapper.getBrandCount(brandPagination);
-        Pagination pagination = new Pagination(brandPagination.getPageNo(), brandPagination.getPageSize(), count);
-        pagination.setList(brandMapper.getBrandListWithPage(brandPagination));
-        return pagination;
-    }
+	@Override
+	public void addBrand(Brand brand) {
+		brandMapper.addBrand(brand);
+	}
 
-    public void addBrand(Brand brand) throws Exception {
-        brandMapper.addBrand(brand);
-    }
+	@Override
+	public void deleteBrandByKey(Integer id) {
+		brandMapper.deleteBrandByKey(id);
+		
+	}
 
-    public void deleteBrandByKey(Integer id) throws Exception {
-        brandMapper.deleteBrandByKey(id);
-    }
+	@Override
+	public void deleteBrandByKeys(Integer[] ids) {
+		brandMapper.deleteBrandByKeys(ids);
+		
+	}
 
-    public void deleteBrandByKeys(Integer[] ids) throws Exception {
-        brandMapper.deleteBrandByKeys(ids);
-    }
+	@Override
+	public void updateBrandByKey(Brand brand) {
+		brandMapper.updateBrandByKey(brand);
+		
+	}
 
-    public void updateBrandByKey(Brand brand, Integer id) throws Exception {
-        brand.setId(id);
-        brandMapper.updateBrandByKey(brand);
-    }
+	public Brand getBrandByKey(Integer id) {
+		// TODO Auto-generated method stub
+		return brandMapper.getBrandByKey(id);
+	}
 
-    public Brand getBrandByKey(Integer id) throws Exception {
-        return brandMapper.getBrandByKey(id);
-    }
+	@Override
+	public List<Brand> getBrandList(BrandQuery brandQuery) {
+		// TODO Auto-generated method stub
+		return brandMapper.getBrandList(brandQuery);
+	}
 }
