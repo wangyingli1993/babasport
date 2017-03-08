@@ -1,7 +1,7 @@
 package me.alent.core.service.product;
 
 import me.alent.common.page.Pagination;
-import me.alent.core.Query.product.TypeQuery;
+import me.alent.core.query.product.TypeQuery;
 import me.alent.core.mapper.product.TypeMapper;
 import me.alent.core.po.product.Type;
 import org.springframework.stereotype.Service;

@@ -1,17 +1,16 @@
-package me.alent.core.Query.country;
+package me.alent.core.query.product;
 
-import me.alent.core.Query.BaseQuery;
+import me.alent.core.query.BaseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * 
  * @author lixu
  * @Date [2014-3-28 下午05:58:00]
  */
-public class ProvinceQuery extends BaseQuery {
+public class ImgQuery extends BaseQuery {
 	/**
 	 * ==============================批量查询、更新、删除时的Where条件设置======================
 	 * ============
@@ -20,34 +19,37 @@ public class ProvinceQuery extends BaseQuery {
 	public Integer getId() {
 		return id;
 	}
-	public ProvinceQuery setId(Integer id) {
+	public ImgQuery setId(Integer id) {
 		this.id = id;
 		return this;
 	}
-	private String code;
-	public String getCode() {
-		return code;
+	private Integer productId;
+	public Integer getProductId() {
+		return productId;
 	}
-	public ProvinceQuery setCode(String code) {
-		this.code = code;
+	public ImgQuery setProductId(Integer productId) {
+		this.productId = productId;
 		return this;
 	}
-	private boolean codeLike;
-	public ProvinceQuery setCodeLike(boolean isLike) {
-		this.codeLike = isLike;
+	private String url;
+	public String getUrl() {
+		return url;
+	}
+	public ImgQuery setUrl(String url) {
+		this.url = url;
 		return this;
 	}
-	private String name;
-	public String getName() {
-		return name;
-	}
-	public ProvinceQuery setName(String name) {
-		this.name = name;
+	private boolean urlLike;
+	public ImgQuery setUrlLike(boolean isLike) {
+		this.urlLike = isLike;
 		return this;
 	}
-	private boolean nameLike;
-	public ProvinceQuery setNameLike(boolean isLike) {
-		this.nameLike = isLike;
+	private Integer isDef;
+	public Integer getIsDef() {
+		return isDef;
+	}
+	public ImgQuery setIsDef(Integer isDef) {
+		this.isDef = isDef;
 		return this;
 	}
 	/**
@@ -90,29 +92,38 @@ public class ProvinceQuery extends BaseQuery {
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public ProvinceQuery orderbyId(boolean isAsc) {
+	public ImgQuery orderbyId(boolean isAsc) {
 		orderFields.add(new OrderField("id", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
 	/**
-	 * 设置排序按属性：code
+	 * 设置排序按属性：product_id
 	 * 
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public ProvinceQuery orderbyCode(boolean isAsc) {
-		orderFields.add(new OrderField("code", isAsc ? "ASC" : "DESC"));
+	public ImgQuery orderbyProductId(boolean isAsc) {
+		orderFields.add(new OrderField("product_id", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
 	/**
-	 * 设置排序按属性：name
+	 * 设置排序按属性：url
 	 * 
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public ProvinceQuery orderbyName(boolean isAsc) {
-		orderFields.add(new OrderField("name", isAsc ? "ASC" : "DESC"));
+	public ImgQuery orderbyUrl(boolean isAsc) {
+		orderFields.add(new OrderField("url", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
-
+	/**
+	 * 设置排序按属性：is_def
+	 * 
+	 * @param isAsc
+	 *            是否升序，否则为降序
+	 */
+	public ImgQuery orderbyIsDef(boolean isAsc) {
+		orderFields.add(new OrderField("is_def", isAsc ? "ASC" : "DESC"));
+		return this;
+	}
 }

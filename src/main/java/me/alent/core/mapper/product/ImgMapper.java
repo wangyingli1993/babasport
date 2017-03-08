@@ -1,7 +1,7 @@
 package me.alent.core.mapper.product;
 
 
-import me.alent.core.Query.product.ImgQuery;
+import me.alent.core.query.product.ImgQuery;
 import me.alent.core.po.product.Img;
 
 import java.util.List;
@@ -13,6 +13,8 @@ public interface ImgMapper {
 	 * @param img
 	 */
 	public Integer addImg(Img img);
+
+	Img getImgByProductId(Integer id);
 
 	/**
 	 * 根据主键查找

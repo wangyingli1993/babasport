@@ -1,4 +1,4 @@
-package me.alent.core.Query.product;
+package me.alent.core.query.product;
 
 import java.util.ArrayList;
 import java.util.List;

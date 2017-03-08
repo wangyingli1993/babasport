@@ -1,7 +1,7 @@
 package me.alent.core.mapper.product;
 
 
-import me.alent.core.Query.product.FeatureQuery;
+import me.alent.core.query.product.FeatureQuery;
 import me.alent.core.po.product.Feature;
 
 import java.util.List;

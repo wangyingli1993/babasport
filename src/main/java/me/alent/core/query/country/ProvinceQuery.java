@@ -1,16 +1,17 @@
-package me.alent.core.Query.product;
+package me.alent.core.query.country;
 
-import me.alent.core.Query.BaseQuery;
+import me.alent.core.query.BaseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * 
  * @author lixu
  * @Date [2014-3-28 下午05:58:00]
  */
-public class ColorQuery extends BaseQuery {
+public class ProvinceQuery extends BaseQuery {
 	/**
 	 * ==============================批量查询、更新、删除时的Where条件设置======================
 	 * ============
@@ -19,42 +20,34 @@ public class ColorQuery extends BaseQuery {
 	public Integer getId() {
 		return id;
 	}
-	public ColorQuery setId(Integer id) {
+	public ProvinceQuery setId(Integer id) {
 		this.id = id;
+		return this;
+	}
+	private String code;
+	public String getCode() {
+		return code;
+	}
+	public ProvinceQuery setCode(String code) {
+		this.code = code;
+		return this;
+	}
+	private boolean codeLike;
+	public ProvinceQuery setCodeLike(boolean isLike) {
+		this.codeLike = isLike;
 		return this;
 	}
 	private String name;
 	public String getName() {
 		return name;
 	}
-	public ColorQuery setName(String name) {
+	public ProvinceQuery setName(String name) {
 		this.name = name;
 		return this;
 	}
 	private boolean nameLike;
-	public ColorQuery setNameLike(boolean isLike) {
+	public ProvinceQuery setNameLike(boolean isLike) {
 		this.nameLike = isLike;
-		return this;
-	}
-	private Integer parentId;
-	public Integer getParentId() {
-		return parentId;
-	}
-	public ColorQuery setParentId(Integer parentId) {
-		this.parentId = parentId;
-		return this;
-	}
-	private String imgUrl;
-	public String getImgUrl() {
-		return imgUrl;
-	}
-	public ColorQuery setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
-		return this;
-	}
-	private boolean imgUrlLike;
-	public ColorQuery setImgUrlLike(boolean isLike) {
-		this.imgUrlLike = isLike;
 		return this;
 	}
 	/**
@@ -97,8 +90,18 @@ public class ColorQuery extends BaseQuery {
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public ColorQuery orderbyId(boolean isAsc) {
+	public ProvinceQuery orderbyId(boolean isAsc) {
 		orderFields.add(new OrderField("id", isAsc ? "ASC" : "DESC"));
+		return this;
+	}
+	/**
+	 * 设置排序按属性：code
+	 * 
+	 * @param isAsc
+	 *            是否升序，否则为降序
+	 */
+	public ProvinceQuery orderbyCode(boolean isAsc) {
+		orderFields.add(new OrderField("code", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
 	/**
@@ -107,28 +110,8 @@ public class ColorQuery extends BaseQuery {
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public ColorQuery orderbyName(boolean isAsc) {
+	public ProvinceQuery orderbyName(boolean isAsc) {
 		orderFields.add(new OrderField("name", isAsc ? "ASC" : "DESC"));
-		return this;
-	}
-	/**
-	 * 设置排序按属性：parent_id
-	 * 
-	 * @param isAsc
-	 *            是否升序，否则为降序
-	 */
-	public ColorQuery orderbyParentId(boolean isAsc) {
-		orderFields.add(new OrderField("parent_id", isAsc ? "ASC" : "DESC"));
-		return this;
-	}
-	/**
-	 * 设置排序按属性：img_url
-	 * 
-	 * @param isAsc
-	 *            是否升序，否则为降序
-	 */
-	public ColorQuery orderbyImgUrl(boolean isAsc) {
-		orderFields.add(new OrderField("img_url", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
 

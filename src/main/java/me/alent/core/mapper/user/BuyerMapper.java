@@ -1,7 +1,7 @@
 package me.alent.core.mapper.user;
 
 
-import me.alent.core.Query.user.BuyerQuery;
+import me.alent.core.query.user.BuyerQuery;
 import me.alent.core.po.user.Buyer;
 
 import java.util.List;

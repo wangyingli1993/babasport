@@ -1,6 +1,6 @@
 package me.alent.core.mapper.product;
 
-import me.alent.core.Query.product.ProductQuery;
+import me.alent.core.query.product.ProductQuery;
 import me.alent.core.po.product.Product;
 
 import java.util.List;

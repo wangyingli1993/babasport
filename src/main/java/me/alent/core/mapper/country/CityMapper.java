@@ -1,6 +1,6 @@
 package me.alent.core.mapper.country;
 
-import me.alent.core.Query.country.CityQuery;
+import me.alent.core.query.country.CityQuery;
 import me.alent.core.po.country.City;
 
 import java.util.List;

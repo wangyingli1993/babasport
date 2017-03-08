@@ -1,6 +1,6 @@
-package me.alent.core.Query.product;
+package me.alent.core.query.product;
 
-import me.alent.core.Query.BaseQuery;
+import me.alent.core.query.BaseQuery;
 
 import java.util.ArrayList;
 import java.util.Date;

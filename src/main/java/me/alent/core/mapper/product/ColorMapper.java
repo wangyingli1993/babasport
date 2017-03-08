@@ -1,6 +1,6 @@
 package me.alent.core.mapper.product;
 
-import me.alent.core.Query.product.ColorQuery;
+import me.alent.core.query.product.ColorQuery;
 import me.alent.core.po.product.Color;
 
 import java.util.List;

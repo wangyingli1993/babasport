@@ -25,6 +25,7 @@
 		<result property="feature" column="feature" />
 		<result property="color" column="color" />
 		<result property="size" column="size" />
+        <association property="img" column="id" select="me.alent.core.mapper.product.ImgMapper.getImgByProductId"/>
 	</resultMap>
 	<!-- Select SQL -->
 	<sql id="productSelector">
@@ -300,7 +301,7 @@
 		<include refid="productListOrder" />
 	</select>
 	<!-- 添加 -->
-	<insert id="addProduct" parameterType="Product">
+	<insert id="addProduct" parameterType="Product" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO bbs_product
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 				<if test="id != null">

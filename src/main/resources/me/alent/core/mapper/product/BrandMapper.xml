@@ -76,7 +76,7 @@
 			<if test="isDisplay != null">
 				is_display = #{isDisplay}
 			</if>
-			<if test="name != null">
+			<if test="name != null and name != ''">
 				and name = #{name}
 			</if>
 		</where>
@@ -92,7 +92,7 @@
 			<if test="isDisplay != null">
 				is_display = #{isDisplay}
 			</if>
-			<if test="name != null">
+			<if test="name != null and name != ''">
 				and name = #{name}
 			</if>
 		</where>

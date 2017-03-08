@@ -1,17 +1,16 @@
-package me.alent.core.Query.country;
+package me.alent.core.query.product;
 
-import me.alent.core.Query.BaseQuery;
+import me.alent.core.query.BaseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * 
  * @author lixu
  * @Date [2014-3-28 下午05:58:00]
  */
-public class CityQuery extends BaseQuery {
+public class ColorQuery extends BaseQuery {
 	/**
 	 * ==============================批量查询、更新、删除时的Where条件设置======================
 	 * ============
@@ -20,47 +19,42 @@ public class CityQuery extends BaseQuery {
 	public Integer getId() {
 		return id;
 	}
-	public CityQuery setId(Integer id) {
+	public ColorQuery setId(Integer id) {
 		this.id = id;
-		return this;
-	}
-	private String code;
-	public String getCode() {
-		return code;
-	}
-	public CityQuery setCode(String code) {
-		this.code = code;
-		return this;
-	}
-	private boolean codeLike;
-	public CityQuery setCodeLike(boolean isLike) {
-		this.codeLike = isLike;
 		return this;
 	}
 	private String name;
 	public String getName() {
 		return name;
 	}
-	public CityQuery setName(String name) {
+	public ColorQuery setName(String name) {
 		this.name = name;
 		return this;
 	}
 	private boolean nameLike;
-	public CityQuery setNameLike(boolean isLike) {
+	public ColorQuery setNameLike(boolean isLike) {
 		this.nameLike = isLike;
 		return this;
 	}
-	private String province;
-	public String getProvince() {
-		return province;
+	private Integer parentId;
+	public Integer getParentId() {
+		return parentId;
 	}
-	public CityQuery setProvince(String province) {
-		this.province = province;
+	public ColorQuery setParentId(Integer parentId) {
+		this.parentId = parentId;
 		return this;
 	}
-	private boolean provinceLike;
-	public CityQuery setProvinceLike(boolean isLike) {
-		this.provinceLike = isLike;
+	private String imgUrl;
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	public ColorQuery setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+		return this;
+	}
+	private boolean imgUrlLike;
+	public ColorQuery setImgUrlLike(boolean isLike) {
+		this.imgUrlLike = isLike;
 		return this;
 	}
 	/**
@@ -103,18 +97,8 @@ public class CityQuery extends BaseQuery {
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public CityQuery orderbyId(boolean isAsc) {
+	public ColorQuery orderbyId(boolean isAsc) {
 		orderFields.add(new OrderField("id", isAsc ? "ASC" : "DESC"));
-		return this;
-	}
-	/**
-	 * 设置排序按属性：code
-	 * 
-	 * @param isAsc
-	 *            是否升序，否则为降序
-	 */
-	public CityQuery orderbyCode(boolean isAsc) {
-		orderFields.add(new OrderField("code", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
 	/**
@@ -123,18 +107,28 @@ public class CityQuery extends BaseQuery {
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public CityQuery orderbyName(boolean isAsc) {
+	public ColorQuery orderbyName(boolean isAsc) {
 		orderFields.add(new OrderField("name", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
 	/**
-	 * 设置排序按属性：province
+	 * 设置排序按属性：parent_id
 	 * 
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public CityQuery orderbyProvince(boolean isAsc) {
-		orderFields.add(new OrderField("province", isAsc ? "ASC" : "DESC"));
+	public ColorQuery orderbyParentId(boolean isAsc) {
+		orderFields.add(new OrderField("parent_id", isAsc ? "ASC" : "DESC"));
+		return this;
+	}
+	/**
+	 * 设置排序按属性：img_url
+	 * 
+	 * @param isAsc
+	 *            是否升序，否则为降序
+	 */
+	public ColorQuery orderbyImgUrl(boolean isAsc) {
+		orderFields.add(new OrderField("img_url", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
 

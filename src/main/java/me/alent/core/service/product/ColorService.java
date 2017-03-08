@@ -2,7 +2,7 @@ package me.alent.core.service.product;
 
 
 import me.alent.common.page.Pagination;
-import me.alent.core.Query.product.ColorQuery;
+import me.alent.core.query.product.ColorQuery;
 import me.alent.core.po.product.Color;
 
 import java.util.List;

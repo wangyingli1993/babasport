@@ -1,4 +1,4 @@
-package me.alent.core.Query;
+package me.alent.core.query;
 
 import java.io.Serializable;
 

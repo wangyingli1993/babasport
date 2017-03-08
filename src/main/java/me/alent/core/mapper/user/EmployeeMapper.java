@@ -1,7 +1,7 @@
 package me.alent.core.mapper.user;
 
 
-import me.alent.core.Query.user.EmployeeQuery;
+import me.alent.core.query.user.EmployeeQuery;
 import me.alent.core.po.user.Employee;
 
 import java.util.List;

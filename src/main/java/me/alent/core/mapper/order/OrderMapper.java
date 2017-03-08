@@ -1,7 +1,7 @@
 package me.alent.core.mapper.order;
 
 
-import me.alent.core.Query.order.OrderQuery;
+import me.alent.core.query.order.OrderQuery;
 import me.alent.core.po.order.Order;
 
 import java.util.List;

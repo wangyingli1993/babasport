@@ -90,7 +90,7 @@ public class BrandController {
 
     //提交修改页面
     @RequestMapping(value = "/brand/edit.do")
-    public String edit(Integer id, Brand brand) throws Exception {
+    public String edit(Brand brand) throws Exception {
         brandService.updateBrandByKey(brand);
         return "redirect:/brand/list.do";
     }

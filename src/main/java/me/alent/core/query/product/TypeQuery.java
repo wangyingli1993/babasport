@@ -1,16 +1,16 @@
-package me.alent.core.Query.product;
+package me.alent.core.query.product;
 
-import me.alent.core.Query.BaseQuery;
+import me.alent.core.query.BaseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
+ * 商品类型条件对象
  * @author lixu
  * @Date [2014-3-28 下午05:58:00]
  */
-public class ImgQuery extends BaseQuery {
+public class TypeQuery extends BaseQuery {
 	/**
 	 * ==============================批量查询、更新、删除时的Where条件设置======================
 	 * ============
@@ -19,37 +19,50 @@ public class ImgQuery extends BaseQuery {
 	public Integer getId() {
 		return id;
 	}
-	public ImgQuery setId(Integer id) {
+	public TypeQuery setId(Integer id) {
 		this.id = id;
 		return this;
 	}
-	private Integer productId;
-	public Integer getProductId() {
-		return productId;
+	private String name;
+	public String getName() {
+		return name;
 	}
-	public ImgQuery setProductId(Integer productId) {
-		this.productId = productId;
+	public TypeQuery setName(String name) {
+		this.name = name;
 		return this;
 	}
-	private String url;
-	public String getUrl() {
-		return url;
-	}
-	public ImgQuery setUrl(String url) {
-		this.url = url;
+	private boolean nameLike;
+	public TypeQuery setNameLike(boolean isLike) {
+		this.nameLike = isLike;
 		return this;
 	}
-	private boolean urlLike;
-	public ImgQuery setUrlLike(boolean isLike) {
-		this.urlLike = isLike;
+	private Integer parentId;
+	public Integer getParentId() {
+		return parentId;
+	}
+	public TypeQuery setParentId(Integer parentId) {
+		this.parentId = parentId;
 		return this;
 	}
-	private Integer isDef;
-	public Integer getIsDef() {
-		return isDef;
+	private String note;
+	public String getNote() {
+		return note;
 	}
-	public ImgQuery setIsDef(Integer isDef) {
-		this.isDef = isDef;
+	public TypeQuery setNote(String note) {
+		this.note = note;
+		return this;
+	}
+	private boolean noteLike;
+	public TypeQuery setNoteLike(boolean isLike) {
+		this.noteLike = isLike;
+		return this;
+	}
+	private Integer isDisplay;
+	public Integer getIsDisplay() {
+		return isDisplay;
+	}
+	public TypeQuery setIsDisplay(Integer isDisplay) {
+		this.isDisplay = isDisplay;
 		return this;
 	}
 	/**
@@ -92,38 +105,48 @@ public class ImgQuery extends BaseQuery {
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public ImgQuery orderbyId(boolean isAsc) {
+	public TypeQuery orderbyId(boolean isAsc) {
 		orderFields.add(new OrderField("id", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
 	/**
-	 * 设置排序按属性：product_id
+	 * 设置排序按属性：name
 	 * 
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public ImgQuery orderbyProductId(boolean isAsc) {
-		orderFields.add(new OrderField("product_id", isAsc ? "ASC" : "DESC"));
+	public TypeQuery orderbyName(boolean isAsc) {
+		orderFields.add(new OrderField("name", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
 	/**
-	 * 设置排序按属性：url
+	 * 设置排序按属性：parent_id
 	 * 
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public ImgQuery orderbyUrl(boolean isAsc) {
-		orderFields.add(new OrderField("url", isAsc ? "ASC" : "DESC"));
+	public TypeQuery orderbyParentId(boolean isAsc) {
+		orderFields.add(new OrderField("parent_id", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
 	/**
-	 * 设置排序按属性：is_def
+	 * 设置排序按属性：note
 	 * 
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public ImgQuery orderbyIsDef(boolean isAsc) {
-		orderFields.add(new OrderField("is_def", isAsc ? "ASC" : "DESC"));
+	public TypeQuery orderbyNote(boolean isAsc) {
+		orderFields.add(new OrderField("note", isAsc ? "ASC" : "DESC"));
+		return this;
+	}
+	/**
+	 * 设置排序按属性：is_display
+	 * 
+	 * @param isAsc
+	 *            是否升序，否则为降序
+	 */
+	public TypeQuery orderbyIsDisplay(boolean isAsc) {
+		orderFields.add(new OrderField("is_display", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
 }

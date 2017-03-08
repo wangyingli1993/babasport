@@ -1,7 +1,7 @@
 package me.alent.core.mapper.user;
 
 
-import me.alent.core.Query.user.AddrQuery;
+import me.alent.core.query.user.AddrQuery;
 import me.alent.core.po.user.Addr;
 
 import java.util.List;

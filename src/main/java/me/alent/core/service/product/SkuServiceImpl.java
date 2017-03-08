@@ -1,7 +1,7 @@
 package me.alent.core.service.product;
 
 import me.alent.common.page.Pagination;
-import me.alent.core.Query.product.SkuQuery;
+import me.alent.core.query.product.SkuQuery;
 import me.alent.core.mapper.product.SkuMapper;
 import me.alent.core.po.product.Sku;
 import org.springframework.stereotype.Service;

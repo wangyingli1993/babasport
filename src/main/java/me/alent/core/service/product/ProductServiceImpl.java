@@ -1,13 +1,19 @@
 package me.alent.core.service.product;
 
 import me.alent.common.page.Pagination;
-import me.alent.core.Query.product.ProductQuery;
+import me.alent.core.po.product.Img;
+import me.alent.core.po.product.Sku;
+import me.alent.core.query.product.ProductQuery;
 import me.alent.core.mapper.product.ProductMapper;
 import me.alent.core.po.product.Product;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,13 +27,46 @@ public class ProductServiceImpl implements ProductService {
 
 	@Resource
 	ProductMapper productMapper;
+	@Autowired
+	private ImgService imgService;
+	@Autowired
+	private SkuService skuService;
 	/**
 	 * 插入数据库
 	 * 
 	 * @return
 	 */
 	public Integer addProduct(Product product) {
-		return productMapper.addProduct(product);
+		// 商品编号生成
+		DateFormat df = new SimpleDateFormat("yyyyMMddHHmmssSSS");
+		String no = df.format(new Date());
+		product.setNo(no);
+		// 添加时间
+		product.setCreateTime(new Date());
+		// 保存商品，返回影响行数
+		Integer row = productMapper.addProduct(product);
+
+		Img img = product.getImg();
+		img.setProductId(product.getId());
+		img.setIsDef(1);
+		// 保存图片
+		imgService.addImg(img);
+		Sku sku = new Sku();
+		sku.setProductId(product.getId());
+		sku.setDeliveFee(10.00);
+		sku.setSkuPrice(0.00);
+		sku.setMarketPrice(0.00);
+		sku.setStockInventory(0);
+		sku.setSkuUpperLimit(0);
+		sku.setCreateTime(new Date());
+		for(String color: product.getColor().split(",")) {
+			sku.setColorId(Integer.parseInt(color));
+			for (String size : product.getSize().split(",")) {
+				sku.setSize(size);
+				skuService.addSku(sku);
+			}
+		}
+		return row;
 	}
 
 	/**

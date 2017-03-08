@@ -14,7 +14,8 @@
 
 	<!--批量定义类的别名-->
 	<typeAliases>
-		<package name="me.alent.core.po"/>
+		<package name="me.alent.core.po" />
+		<package name="me.alent.core.query" />
 	</typeAliases>
 
 </configuration>

@@ -128,6 +128,10 @@
 		<include refid="imgListWhere" />
 		<include refid="imgListOrder" />
 	</select>
+	<select id="getImgByProductId" resultMap="img" parameterType="int">
+		SELECT * FROM bbs_img
+		WHERE product_id = #{value}
+	</select>
 	<!-- 添加 -->
 	<insert id="addImg" parameterType="Img">
 		INSERT INTO bbs_img

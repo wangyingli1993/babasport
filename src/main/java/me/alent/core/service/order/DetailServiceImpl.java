@@ -1,7 +1,7 @@
 package me.alent.core.service.order;
 
 import me.alent.common.page.Pagination;
-import me.alent.core.Query.order.DetailQuery;
+import me.alent.core.query.order.DetailQuery;
 import me.alent.core.mapper.order.DetaiMapper;
 import me.alent.core.po.order.Detail;
 import org.springframework.stereotype.Service;

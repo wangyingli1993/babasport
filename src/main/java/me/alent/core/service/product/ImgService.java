@@ -2,7 +2,7 @@ package me.alent.core.service.product;
 
 
 import me.alent.common.page.Pagination;
-import me.alent.core.Query.product.ImgQuery;
+import me.alent.core.query.product.ImgQuery;
 import me.alent.core.po.product.Img;
 
 import java.util.List;

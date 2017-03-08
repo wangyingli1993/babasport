@@ -1,7 +1,7 @@
 package me.alent.core.service.user;
 
 import me.alent.common.page.Pagination;
-import me.alent.core.Query.user.BuyerQuery;
+import me.alent.core.query.user.BuyerQuery;
 import me.alent.core.mapper.user.BuyerMapper;
 import me.alent.core.po.user.Buyer;
 import org.springframework.stereotype.Service;

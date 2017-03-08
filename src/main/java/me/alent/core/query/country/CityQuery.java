@@ -1,16 +1,16 @@
-package me.alent.core.Query.product;
+package me.alent.core.query.country;
 
-import me.alent.core.Query.BaseQuery;
+import me.alent.core.query.BaseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 商品类型条件对象
+ * 
  * @author lixu
  * @Date [2014-3-28 下午05:58:00]
  */
-public class TypeQuery extends BaseQuery {
+public class CityQuery extends BaseQuery {
 	/**
 	 * ==============================批量查询、更新、删除时的Where条件设置======================
 	 * ============
@@ -19,50 +19,47 @@ public class TypeQuery extends BaseQuery {
 	public Integer getId() {
 		return id;
 	}
-	public TypeQuery setId(Integer id) {
+	public CityQuery setId(Integer id) {
 		this.id = id;
+		return this;
+	}
+	private String code;
+	public String getCode() {
+		return code;
+	}
+	public CityQuery setCode(String code) {
+		this.code = code;
+		return this;
+	}
+	private boolean codeLike;
+	public CityQuery setCodeLike(boolean isLike) {
+		this.codeLike = isLike;
 		return this;
 	}
 	private String name;
 	public String getName() {
 		return name;
 	}
-	public TypeQuery setName(String name) {
+	public CityQuery setName(String name) {
 		this.name = name;
 		return this;
 	}
 	private boolean nameLike;
-	public TypeQuery setNameLike(boolean isLike) {
+	public CityQuery setNameLike(boolean isLike) {
 		this.nameLike = isLike;
 		return this;
 	}
-	private Integer parentId;
-	public Integer getParentId() {
-		return parentId;
+	private String province;
+	public String getProvince() {
+		return province;
 	}
-	public TypeQuery setParentId(Integer parentId) {
-		this.parentId = parentId;
+	public CityQuery setProvince(String province) {
+		this.province = province;
 		return this;
 	}
-	private String note;
-	public String getNote() {
-		return note;
-	}
-	public TypeQuery setNote(String note) {
-		this.note = note;
-		return this;
-	}
-	private boolean noteLike;
-	public TypeQuery setNoteLike(boolean isLike) {
-		this.noteLike = isLike;
-		return this;
-	}
-	private Integer isDisplay;
-	public Integer getIsDisplay() {
-		return isDisplay;
-	}
-	public TypeQuery setIsDisplay(Integer isDisplay) {
-		this.isDisplay = isDisplay;
+	private boolean provinceLike;
+	public CityQuery setProvinceLike(boolean isLike) {
+		this.provinceLike = isLike;
 		return this;
 	}
 	/**
@@ -105,8 +102,18 @@ public class TypeQuery extends BaseQuery {
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public TypeQuery orderbyId(boolean isAsc) {
+	public CityQuery orderbyId(boolean isAsc) {
 		orderFields.add(new OrderField("id", isAsc ? "ASC" : "DESC"));
+		return this;
+	}
+	/**
+	 * 设置排序按属性：code
+	 * 
+	 * @param isAsc
+	 *            是否升序，否则为降序
+	 */
+	public CityQuery orderbyCode(boolean isAsc) {
+		orderFields.add(new OrderField("code", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
 	/**
@@ -115,38 +122,19 @@ public class TypeQuery extends BaseQuery {
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public TypeQuery orderbyName(boolean isAsc) {
+	public CityQuery orderbyName(boolean isAsc) {
 		orderFields.add(new OrderField("name", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
 	/**
-	 * 设置排序按属性：parent_id
+	 * 设置排序按属性：province
 	 * 
 	 * @param isAsc
 	 *            是否升序，否则为降序
 	 */
-	public TypeQuery orderbyParentId(boolean isAsc) {
-		orderFields.add(new OrderField("parent_id", isAsc ? "ASC" : "DESC"));
+	public CityQuery orderbyProvince(boolean isAsc) {
+		orderFields.add(new OrderField("province", isAsc ? "ASC" : "DESC"));
 		return this;
 	}
-	/**
-	 * 设置排序按属性：note
-	 * 
-	 * @param isAsc
-	 *            是否升序，否则为降序
-	 */
-	public TypeQuery orderbyNote(boolean isAsc) {
-		orderFields.add(new OrderField("note", isAsc ? "ASC" : "DESC"));
-		return this;
-	}
-	/**
-	 * 设置排序按属性：is_display
-	 * 
-	 * @param isAsc
-	 *            是否升序，否则为降序
-	 */
-	public TypeQuery orderbyIsDisplay(boolean isAsc) {
-		orderFields.add(new OrderField("is_display", isAsc ? "ASC" : "DESC"));
-		return this;
-	}
+
 }

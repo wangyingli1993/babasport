@@ -2,7 +2,7 @@ package me.alent.core.service.user;
 
 
 import me.alent.common.page.Pagination;
-import me.alent.core.Query.user.AddrQuery;
+import me.alent.core.query.user.AddrQuery;
 import me.alent.core.po.user.Addr;
 
 import java.util.List;

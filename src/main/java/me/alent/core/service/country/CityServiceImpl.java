@@ -1,7 +1,7 @@
 package me.alent.core.service.country;
 
 import me.alent.common.page.Pagination;
-import me.alent.core.Query.country.CityQuery;
+import me.alent.core.query.country.CityQuery;
 import me.alent.core.mapper.country.CityMapper;
 import me.alent.core.po.country.City;
 import org.springframework.stereotype.Service;

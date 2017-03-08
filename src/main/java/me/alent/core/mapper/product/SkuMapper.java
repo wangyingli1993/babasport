@@ -1,7 +1,7 @@
 package me.alent.core.mapper.product;
 
 
-import me.alent.core.Query.product.SkuQuery;
+import me.alent.core.query.product.SkuQuery;
 import me.alent.core.po.product.Sku;
 
 import java.util.List;

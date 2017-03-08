@@ -1,7 +1,7 @@
 package me.alent.core.service.user;
 
 import me.alent.common.page.Pagination;
-import me.alent.core.Query.user.EmployeeQuery;
+import me.alent.core.query.user.EmployeeQuery;
 import me.alent.core.mapper.user.EmployeeMapper;
 import me.alent.core.po.user.Employee;
 import org.springframework.stereotype.Service;
